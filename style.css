@@ -1,8 +1,33 @@
+Okay, let's tackle these two issues: the white background and the layout change.
+
+Addressing the White Background:
+
+Since you renamed the CSS file to style.css, the most likely reason the background is still white is that your index.html file is still linking to the old CSS filename.
+
+Action: Open your index.html file and make sure the <link> tag in the <head> section looks exactly like this:
+
+HTML
+
+<link rel="stylesheet" href="style.css">
+If it still says href="style-black.css" or anything else, change it to href="style.css". Also, confirm that the file you uploaded to GitHub is named style.css and contains the dark theme code, and that index.html and style.css are in the same directory in your repository (or both in /docs if you're using that folder).
+
+Implementing the Picture on Left, Contact/Links on Right Layout:
+
+This requires modifying both the HTML structure and the CSS. We'll use Flexbox for this layout.
+
+Here are the updated style.css (black theme with layout changes) and index.html files:
+
+1. Updated Black Minimalistic CSS (style.css)
+
+Save this code and replace the content of your existing style.css file with it.
+
+CSS
+
 /* Basic Reset */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif; /* Using Lato again, ensure link in HTML */
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
     background-color: #1a1a1a; /* Dark background */
     color: #e0e0e0; /* Light grey text */
@@ -13,94 +38,117 @@ body {
 
 /* Main Container */
 .cv-container {
-    max-width: 800px; /* Maximum width of the CV */
-    margin: 20px auto; /* Center the container with some top/bottom margin */
+    max-width: 800px;
+    margin: 20px auto;
     padding: 30px;
-    background-color: #252525; /* Slightly lighter dark background for content */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4); /* More pronounced shadow */
-    border-radius: 8px; /* Slightly rounded corners */
+    background-color: #252525;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    border-radius: 8px;
 }
 
 /* Header Styles */
 .cv-header {
-    text-align: center;
+    text-align: center; /* Keep text centered for name/title below layout */
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #444; /* Subtle separator line */
+    border-bottom: 1px solid #444;
 }
 
 .cv-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Different font for name */
-    margin: 0 0 5px 0;
-    color: #eeeeee; /* Lighter color for name */
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0 5px 0; /* Add margin above name */
+    color: #eeeeee;
     font-size: 2.5em;
 }
 
 .cv-header .job-title {
     margin: 0;
-    color: #aaaaaa; /* Lighter grey color for title */
+    color: #aaaaaa;
     font-size: 1.1em;
     font-weight: 400;
 }
 
-/* Profile Picture */
-.profile-pic {
-    display: block; /* Center the image */
-    margin: 0 auto 20px auto; /* Center and add space below */
-    width: 150px; /* Size of the image */
-    height: 150px; /* Make it square if you want round */
-    object-fit: cover; /* Cover the area without distortion */
-    border-radius: 50%; /* Make the image round */
-    border: 3px solid #555; /* Subtle border */
+/* --- NEW LAYOUT STYLES --- */
+.header-layout {
+    display: flex; /* Enable Flexbox */
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between the left and right columns */
+    margin-bottom: 20px; /* Space below the layout block */
 }
 
+.left-col {
+    flex: 0 0 150px; /* Don't grow, don't shrink, base size 150px */
+    display: flex; /* Use flex to center the image vertically if needed */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+}
 
-/* Section Styles */
+.right-col {
+    flex-grow: 1; /* Allow the right column to take up remaining space */
+    min-width: 0; /* Prevent overflow issues */
+}
+
+/* Profile Picture */
+.profile-pic {
+    display: block; /* Ensure it's a block element */
+    width: 150px; /* Size of the image */
+    height: 150px; /* Make it square */
+    object-fit: cover; /* Cover the area */
+    border-radius: 50%; /* Make the image round */
+    border: 3px solid #555; /* Subtle border */
+    /* Removed margin: 0 auto... as flexbox handles centering in left-col */
+}
+
+/* Adjust contact and links within the right column */
+.right-col .contact,
+.right-col .links {
+    border-bottom: none; /* Remove separator within the layout block */
+    padding-bottom: 0;
+    margin-bottom: 15px; /* Add space between contact and links */
+}
+
+.right-col .contact p,
+.right-col .links ul {
+     margin-top: 0; /* Adjust top margin */
+}
+
+.right-col .links ul li {
+    display: block; /* Stack links vertically on the right */
+    margin-right: 0; /* Remove horizontal margin */
+    margin-bottom: 5px; /* Add space between stacked links */
+}
+
+.right-col .links ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- END NEW LAYOUT STYLES --- */
+
+
+/* Section Styles (apply to sections *below* the header layout) */
 .cv-section {
-    margin-bottom: 25px; /* Space between sections */
+    margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #555; /* Subtle separator */
+    border-bottom: 1px dashed #555;
 }
 
 .cv-section:last-child {
-    border-bottom: none; /* No border for the last section */
+    border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #bbbbbb; /* Lighter color for section titles */
+    color: #bbbbbb;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.6em;
-    border-left: 4px solid #00bcd4; /* Cyan accent line */
+    border-left: 4px solid #00bcd4;
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
-/* Contact & Links */
-.contact p, .links ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.contact strong {
-    margin-right: 5px;
-    color: #aaaaaa;
-}
-
-.links ul li {
-    display: inline-block; /* Display links side by side */
-    margin-right: 15px;
-}
-
-.links ul li:last-child {
-    margin-right: 0;
-}
-
 
 /* Education */
 .education .entry {
@@ -125,24 +173,24 @@ body {
 .publications ol {
     padding: 0;
     margin: 0;
-    list-style: none; /* Remove default numbers */
-    counter-reset: publication-counter; /* Initialize counter */
+    list-style: none;
+    counter-reset: publication-counter;
 }
 
 .publications li {
     margin-bottom: 20px;
-    padding-left: 30px; /* Space for custom counter */
-    position: relative; /* Needed for absolute positioning of counter */
+    padding-left: 30px;
+    position: relative;
 }
 
 .publications li::before {
-    counter-increment: publication-counter; /* Increment counter */
-    content: counter(publication-counter) "."; /* Display counter */
+    counter-increment: publication-counter;
+    content: counter(publication-counter) ".";
     position: absolute;
     left: 0;
     top: 0;
     font-weight: bold;
-    color: #00bcd4; /* Match accent color */
+    color: #00bcd4;
 }
 
 .publications li strong {
@@ -151,7 +199,7 @@ body {
 }
 
 .publications li em {
-    display: block; /* Conference on new line */
+    display: block;
     margin: 5px 0;
     font-size: 0.9em;
     color: #aaaaaa;
@@ -171,12 +219,12 @@ body {
 
 /* Link Styles */
 a {
-    color: #00bcd4; /* Cyan link color */
-    text-decoration: none; /* No underline by default */
+    color: #00bcd4;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #4dd0e1; /* Lighter cyan on hover */
-    text-decoration: underline; /* Underline on hover */
+    color: #4dd0e1;
+    text-decoration: underline;
 }
