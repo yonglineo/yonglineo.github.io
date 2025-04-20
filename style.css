@@ -95,7 +95,7 @@ body {
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-left: 100px; /* ADDED padding to push picture slightly right */
+    padding-left: 15px; /* Padding to push picture slightly right */
 }
 
 .right-col {
@@ -103,6 +103,7 @@ body {
     min-width: 0; /* Prevent overflow issues */
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 15px; /* ADDED padding to push content slightly right */
 }
 
 /* Profile Picture - Size 200px */
@@ -113,7 +114,6 @@ body {
     object-fit: cover;
     border-radius: 50%; /* Make the image round */
     border: 3px solid #ccc; /* Subtle border */
-    /* No margin needed here as it's centered by parent .left-col */
 }
 
 /* Adjust contact and links within the right column */
@@ -132,7 +132,7 @@ body {
 .right-col .contact h2,
 .right-col .links h2 {
      margin-bottom: 8px;
-     padding-left: 0;
+     padding-left: 0; /* Ensure no extra padding */
      border-left: none;
      text-transform: none;
      letter-spacing: normal;
@@ -144,7 +144,7 @@ body {
 .right-col .links ul {
      margin-top: 5px;
      margin-left: 0;
-     padding-left: 0;
+     padding-left: 0; /* Ensure no extra padding */
      list-style: none;
 }
 
