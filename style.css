@@ -1,3 +1,4 @@
+/* Basic Reset */
 body {
     margin: 0;
     padding: 0;
@@ -42,17 +43,17 @@ body {
     font-weight: 400;
 }
 
-/* --- NEW LAYOUT STYLES --- */
+/* --- LAYOUT STYLES (Refined) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
-    align-items: flex-start; /* Align items to the top */
+    align-items: center; /* Align items to the center vertically */
     gap: 30px; /* Space between the left and right columns */
     margin-bottom: 20px; /* Space below the layout block */
 }
 
 .left-col {
     flex: 0 0 150px; /* Don't grow, don't shrink, base size 150px */
-    display: flex; /* Use flex to center the image vertically if needed */
+    display: flex; /* Use flex to center the image */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
 }
@@ -60,17 +61,19 @@ body {
 .right-col {
     flex-grow: 1; /* Allow the right column to take up remaining space */
     min-width: 0; /* Prevent overflow issues */
+    /* Add some padding to the right column to give content space */
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* Profile Picture */
 .profile-pic {
-    display: block; /* Ensure it's a block element */
-    width: 150px; /* Size of the image */
-    height: 150px; /* Make it square */
-    object-fit: cover; /* Cover the area */
-    border-radius: 50%; /* Make the image round */
-    border: 3px solid #555; /* Subtle border */
-    /* Removed margin: 0 auto... as flexbox handles centering in left-col */
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #555;
 }
 
 /* Adjust contact and links within the right column */
@@ -78,28 +81,48 @@ body {
 .right-col .links {
     border-bottom: none; /* Remove separator within the layout block */
     padding-bottom: 0;
-    margin-bottom: 15px; /* Add space between contact and links */
+    margin-bottom: 15px; /* Add space between contact and links sections */
+}
+
+.right-col .links {
+    margin-top: 20px; /* Add a bit more space above links section */
+}
+
+
+.right-col .contact h2,
+.right-col .links h2 {
+     margin-bottom: 8px; /* Reduced space below section titles in layout */
+     padding-left: 0; /* Remove left padding for better alignment */
+     border-left: none; /* Remove the accent line for these headings in the layout */
+     text-transform: none; /* Keep text as is, not uppercase */
+     letter-spacing: normal; /* Reset letter spacing */
+     font-size: 1.3em; /* Slightly smaller heading size in layout */
+     color: #eeeeee; /* Ensure heading color is visible */
 }
 
 .right-col .contact p,
 .right-col .links ul {
-     margin-top: 0; /* Adjust top margin */
+     margin-top: 5px; /* Add some space above the content */
+     margin-left: 0; /* Ensure left alignment */
+     padding-left: 0; /* Ensure left alignment */
+     list-style: none; /* Remove default list style */
 }
 
 .right-col .links ul li {
-    display: block; /* Stack links vertically on the right */
-    margin-right: 0; /* Remove horizontal margin */
-    margin-bottom: 5px; /* Add space between stacked links */
+    display: block; /* Stack links vertically */
+    margin-right: 0;
+    margin-bottom: 5px; /* Space between stacked links */
 }
 
 .right-col .links ul li:last-child {
     margin-bottom: 0;
 }
 
-/* --- END NEW LAYOUT STYLES --- */
+/* --- END LAYOUT STYLES --- */
 
 
 /* Section Styles (apply to sections *below* the header layout) */
+/* These remain largely the same but ensure they don't conflict with layout styles */
 .cv-section {
     margin-bottom: 25px;
     padding-bottom: 15px;
@@ -112,6 +135,7 @@ body {
     padding-bottom: 0;
 }
 
+/* Re-apply specific styles for h2 outside the header-layout */
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
     color: #bbbbbb;
@@ -123,6 +147,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 
 /* Education */
 .education .entry {
