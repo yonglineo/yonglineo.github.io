@@ -43,17 +43,16 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Picture Size Increased) --- */
+/* --- LAYOUT STYLES (Spacing and Column Size Adjusted) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 40px; /* Space between the left and right columns */
-    margin-bottom: 30px; /* Space below the layout block */
+    gap: 50px; /* INCREASED space between the left and right columns */
+    margin-bottom: 40px; /* INCREASED space below the layout block */
 }
 
 .left-col {
-    /* Let the column size be determined by the image size */
-    flex-shrink: 0; /* Prevent shrinking */
+    flex: 0 0 200px; /* Fixed base size matching image, prevent grow/shrink */
     display: flex; /* Use flex to center the image */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
@@ -62,15 +61,15 @@ body {
 .right-col {
     flex-grow: 1; /* Allow the right column to take up remaining space */
     min-width: 0; /* Prevent overflow issues */
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px; /* Slightly reduced padding */
+    padding-bottom: 5px; /* Slightly reduced padding */
 }
 
-/* Profile Picture - Size Increased */
+/* Profile Picture - Size remains 200px */
 .profile-pic {
     display: block;
-    width: 200px; /* Increased size */
-    height: 200px; /* Increased size */
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #555;
@@ -81,11 +80,11 @@ body {
 .right-col .links {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 15px; /* Space between contact and links sections */
+    margin-bottom: 20px; /* Increased space between contact and links sections */
 }
 
 .right-col .links {
-    margin-top: 20px; /* Space above links section */
+    margin-top: 0; /* Removed extra top margin */
 }
 
 
@@ -123,7 +122,7 @@ body {
 
 /* Section Styles (apply to sections *below* the header block) */
 .cv-section {
-    margin-top: 25px; /* Add margin above these sections */
+    margin-top: 35px; /* INCREASED margin above these sections */
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px dashed #555;
