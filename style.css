@@ -6,54 +6,20 @@ body {
     line-height: 1.6;
     background-color: #f4f7f6; /* Light background */
     color: #333; /* Dark grey text */
-    padding-top: 60px; /* Add padding to top to prevent content hiding behind fixed nav */
+    /* Removed padding-top as nav is removed */
 }
 
 /* Use Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
-/* --- Top Navigation Bar --- */
-.top-nav {
-    position: fixed; /* Fixes the navigation bar at the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff; /* White background for nav */
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Subtle shadow */
-    padding: 10px 20px; /* Padding inside the nav bar */
-    z-index: 1000; /* Ensures the nav bar stays on top of other content */
-}
-
-.top-nav ul {
-    list-style: none; /* Remove default bullets */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center the links */
-}
-
-.top-nav li {
-    margin: 0 15px; /* Space between navigation links */
-}
-
-.top-nav a {
-    color: #34495e; /* Darker link color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    padding: 5px 0; /* Add padding for clickable area */
-    transition: color 0.3s ease;
-}
-
-.top-nav a:hover {
-    color: #3498db; /* Blue on hover */
-}
+/* --- Removed Top Navigation Bar Styles --- */
 
 
 /* Main Container */
 .cv-container {
     max-width: 800px; /* Maximum width of the CV */
-    margin: 0 auto; /* Center the container */
-    padding: 20px 30px; /* Adjusted padding */
+    margin: 20px auto; /* Center the container with some top/bottom margin */
+    padding: 30px; /* Padding inside the container */
     background-color: #fff; /* White background for the CV content */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
     border-radius: 8px; /* Slightly rounded corners */
@@ -81,7 +47,7 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES --- */
+/* --- LAYOUT STYLES (Picture Column Size Adjusted) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
@@ -91,11 +57,12 @@ body {
 }
 
 .left-col {
-    flex: 0 0 200px; /* Fixed base size for picture column */
+    /* Gave the column more space than the image size and center the image within it */
+    flex: 0 0 230px; /* Increased base size for picture column */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-left: 15px; /* Padding to push picture slightly right */
+    /* Removed padding-left */
 }
 
 .right-col {
@@ -103,7 +70,7 @@ body {
     min-width: 0; /* Prevent overflow issues */
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 200px; /* ADDED padding to push content slightly right */
+    padding-left: 15px; /* Padding to push content slightly right */
 }
 
 /* Profile Picture - Size 200px */
@@ -112,8 +79,9 @@ body {
     width: 200px; /* Picture size */
     height: 200px; /* Picture size */
     object-fit: cover;
-    border-radius: 80%; /* Make the image round */
+    border-radius: 50%; /* Make the image round */
     border: 3px solid #ccc; /* Subtle border */
+    /* No margin needed here as it's centered by parent .left-col */
 }
 
 /* Adjust contact and links within the right column */
@@ -167,6 +135,7 @@ body {
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px dashed #eee;
+    /* Removed scroll-margin-top as nav is removed */
 }
 
 .cv-section:last-child {
@@ -186,8 +155,6 @@ body {
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    /* Add scroll margin to prevent fixed nav from covering heading */
-    scroll-margin-top: 70px; /* Adjust based on nav height */
 }
 
 
