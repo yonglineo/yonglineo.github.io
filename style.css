@@ -1,29 +1,3 @@
-Okay, let's tackle these two issues: the white background and the layout change.
-
-Addressing the White Background:
-
-Since you renamed the CSS file to style.css, the most likely reason the background is still white is that your index.html file is still linking to the old CSS filename.
-
-Action: Open your index.html file and make sure the <link> tag in the <head> section looks exactly like this:
-
-HTML
-
-<link rel="stylesheet" href="style.css">
-If it still says href="style-black.css" or anything else, change it to href="style.css". Also, confirm that the file you uploaded to GitHub is named style.css and contains the dark theme code, and that index.html and style.css are in the same directory in your repository (or both in /docs if you're using that folder).
-
-Implementing the Picture on Left, Contact/Links on Right Layout:
-
-This requires modifying both the HTML structure and the CSS. We'll use Flexbox for this layout.
-
-Here are the updated style.css (black theme with layout changes) and index.html files:
-
-1. Updated Black Minimalistic CSS (style.css)
-
-Save this code and replace the content of your existing style.css file with it.
-
-CSS
-
-/* Basic Reset */
 body {
     margin: 0;
     padding: 0;
