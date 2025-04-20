@@ -43,7 +43,7 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Centering the Layout Block) --- */
+/* --- LAYOUT STYLES (Picture Size Reverted, Column Adjusted) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
@@ -56,12 +56,12 @@ body {
 }
 
 .left-col {
-    flex: none; /* Don't grow or shrink, size determined by content/padding */
+    /* Set base size slightly larger than the image to allow centering space */
+    flex: 0 0 180px; /* Adjusted base size for picture column */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    /* Add padding here if needed to push image slightly right from column edge */
-    padding-right: 15px; /* Added padding to push image slightly left from the gap */
+    padding-right: 15px; /* Keep padding to push image slightly left from the gap */
 }
 
 .right-col {
@@ -72,14 +72,15 @@ body {
     padding-left: 15px; /* Padding to push content slightly right */
 }
 
-/* Profile Picture - Size 200px, NOT a circle */
+/* Profile Picture - Size Reverted, NOT a circle */
 .profile-pic {
     display: block;
-    width: 200px; /* Picture size */
-    height: 200px; /* Picture size */
+    width: 150px; /* Reverted Picture size */
+    height: 150px; /* Reverted Picture size */
     object-fit: cover; /* Ensure image covers the area without distortion */
-    border-radius: 0; /* Removed border-radius for square/rectangle */
+    border-radius: 0; /* Keep border-radius 0 for square/rectangle */
     border: 1px solid #ccc; /* Subtle border */
+    right-padding: 100px;
     /* No margin needed here as it's centered by parent .left-col */
 }
 
