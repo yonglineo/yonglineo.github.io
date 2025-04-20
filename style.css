@@ -43,16 +43,17 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Further Refined) --- */
+/* --- LAYOUT STYLES (Picture Size Increased) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 40px; /* INCREASED space between the left and right columns */
-    margin-bottom: 30px; /* INCREASED space below the layout block */
+    gap: 40px; /* Space between the left and right columns */
+    margin-bottom: 30px; /* Space below the layout block */
 }
 
 .left-col {
-    flex: 0 0 150px; /* Don't grow, don't shrink, base size 150px */
+    /* Let the column size be determined by the image size */
+    flex-shrink: 0; /* Prevent shrinking */
     display: flex; /* Use flex to center the image */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
@@ -65,11 +66,11 @@ body {
     padding-bottom: 10px;
 }
 
-/* Profile Picture */
+/* Profile Picture - Size Increased */
 .profile-pic {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #555;
