@@ -2,10 +2,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; /* Example font, link in HTML */
     line-height: 1.6;
-    background-color: #1a1a1a; /* Dark background */
-    color: #e0e0e0; /* Light grey text */
+    background-color: #f4f7f6; /* Light background */
+    color: #333; /* Dark grey text */
 }
 
 /* Use Google Fonts */
@@ -13,12 +13,12 @@ body {
 
 /* Main Container */
 .cv-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #252525;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    border-radius: 8px;
+    max-width: 800px; /* Maximum width of the CV */
+    margin: 20px auto; /* Center the container with some top/bottom margin */
+    padding: 30px; /* Padding inside the container */
+    background-color: #fff; /* White background for the CV content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    border-radius: 8px; /* Slightly rounded corners */
 }
 
 /* Header Styles */
@@ -26,65 +26,69 @@ body {
     text-align: center; /* Keep text centered for name/title below layout */
     margin-bottom: 30px; /* Space below the entire header block */
     padding-bottom: 20px;
-    border-bottom: 1px solid #444;
+    border-bottom: 2px solid #eee; /* Separator line */
 }
 
 .cv-header h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Different font for name */
     margin: 10px 0 5px 0; /* Margin above name */
-    color: #eeeeee;
+    color: #2c3e50; /* Darker blue for name */
     font-size: 2.5em;
 }
 
 .cv-header .job-title {
     margin: 0;
-    color: #aaaaaa;
+    color: #7f8c8d; /* Grey color for title */
     font-size: 1.1em;
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Spacing and Column Size Adjusted) --- */
+/* --- LAYOUT STYLES --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 50px; /* INCREASED space between the left and right columns */
-    margin-bottom: 40px; /* INCREASED space below the layout block */
+    gap: 40px; /* Space between the left and right columns */
+    margin-bottom: 30px; /* Space below the layout block */
+    width: 100%; /* Ensure the flex container spans the available width */
 }
 
 .left-col {
-    flex: 0 0 200px; /* Fixed base size matching image, prevent grow/shrink */
-    display: flex; /* Use flex to center the image */
+    flex: 0 0 200px; /* Fixed base size for picture column */
+    display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
+    /* Optional: Add padding here if image feels too far left */
+    /* padding-left: 10px; */
 }
 
 .right-col {
     flex-grow: 1; /* Allow the right column to take up remaining space */
     min-width: 0; /* Prevent overflow issues */
-    padding-top: 5px; /* Slightly reduced padding */
-    padding-bottom: 5px; /* Slightly reduced padding */
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-/* Profile Picture - Size remains 200px */
+/* Profile Picture - Size 200px (can adjust if needed) */
 .profile-pic {
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 200px; /* Picture size */
+    height: 200px; /* Picture size */
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #555;
+    border-radius: 50%; /* Make the image round */
+    border: 3px solid #ccc; /* Subtle border */
+    /* No margin needed here as it's centered by parent .left-col */
 }
 
 /* Adjust contact and links within the right column */
 .right-col .contact,
 .right-col .links {
-    border-bottom: none;
+    border-bottom: none; /* Remove separator within the layout block */
     padding-bottom: 0;
-    margin-bottom: 20px; /* Increased space between contact and links sections */
+    margin-bottom: 15px; /* Space between contact and links sections */
 }
 
 .right-col .links {
-    margin-top: 0; /* Removed extra top margin */
+    margin-top: 10px; /* Add space above links section */
 }
 
 
@@ -96,7 +100,7 @@ body {
      text-transform: none;
      letter-spacing: normal;
      font-size: 1.3em;
-     color: #eeeeee;
+     color: #333; /* Dark color for headings in layout */
 }
 
 .right-col .contact p,
@@ -108,7 +112,7 @@ body {
 }
 
 .right-col .links ul li {
-    display: block;
+    display: block; /* Stack links vertically */
     margin-right: 0;
     margin-bottom: 5px;
 }
@@ -122,10 +126,10 @@ body {
 
 /* Section Styles (apply to sections *below* the header block) */
 .cv-section {
-    margin-top: 35px; /* INCREASED margin above these sections */
+    margin-top: 25px; /* Add margin above these sections */
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #555;
+    border-bottom: 1px dashed #eee;
 }
 
 .cv-section:last-child {
@@ -137,11 +141,11 @@ body {
 /* Styles for h2 outside the header-layout */
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #bbbbbb;
+    color: #34495e; /* Slightly darker blue for section titles */
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.6em;
-    border-left: 4px solid #00bcd4;
+    border-left: 4px solid #3498db; /* Accent line */
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -155,13 +159,13 @@ body {
 
 .education .entry h3 {
     margin: 0 0 3px 0;
-    color: #bbbbbb;
+    color: #34495e;
     font-size: 1.2em;
 }
 
 .education .entry .institution {
     margin: 0;
-    color: #aaaaaa;
+    color: #7f8c8d;
     font-size: 1em;
     font-style: italic;
 }
@@ -188,26 +192,26 @@ body {
     left: 0;
     top: 0;
     font-weight: bold;
-    color: #00bcd4;
+    color: #3498db; /* Match accent color */
 }
 
 .publications li strong {
     font-size: 1.1em;
-    color: #eeeeee;
+    color: #333; /* Dark text */
 }
 
 .publications li em {
     display: block;
     margin: 5px 0;
     font-size: 0.9em;
-    color: #aaaaaa;
+    color: #555;
 }
 
 .publications li p {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 0.95em;
-    color: #cccccc;
+    color: #555;
 }
 
 .publications li a {
@@ -217,12 +221,12 @@ body {
 
 /* Link Styles */
 a {
-    color: #00bcd4;
-    text-decoration: none;
+    color: #3498db; /* Blue link color */
+    text-decoration: none; /* No underline by default */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #4dd0e1;
-    text-decoration: underline;
+    color: #2980b9; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
 }
