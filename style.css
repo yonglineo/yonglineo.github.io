@@ -95,7 +95,7 @@ body {
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-left: 15px; /* ADDED padding to push picture slightly right */
+    padding-left: 100px; /* ADDED padding to push picture slightly right */
 }
 
 .right-col {
