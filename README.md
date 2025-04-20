@@ -6,14 +6,19 @@ Contact: 25neoyongli@ktj.edu.my
 
 ## Publications
 ### [A Review of State-of-the-Art Machine Algorithms on Classifying Depressive Disorder EEG Signals](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=miPGurwAAAAJ&citation_for_view=miPGurwAAAAJ:d1gkVwhDpl0C)
-Yong Li Neo
-- Description: Addresses the growing issue of depression and explores the potential of using electroencephalography (EEG) brain signals for earlier and more insightful diagnosis compared to traditional questionnaire methods.
+Yong Li Neo (solo author)
+2024 6th International Conference on Artificial Intelligence and Computer Applications [ICAICA 2024](https://www.icaica.org/)
+- Explores the method of machine learning to detect electroencephalography (EEG) brain signals for earlier and insightful depression diagnosis than traditional methods.
 - [Link](https://ieeexplore.ieee.org/abstract/document/10822999)
 
-### Project 2
-- Description
-- Links
+### [Confused vs Non-Confused Electroencephalography Signal Classification Using Deep Learning Algorithm](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=miPGurwAAAAJ&citation_for_view=miPGurwAAAAJ:u5HHmVD_uO8C)
+Zheng You Lim, Yong Li Neo
+2023 IEEE International Conference on Automatic Control and Intelligent Systems (I2CACIS)
+- Utilizes deep learning to analyze electroencephalography (EEG) brain signals for binary classification of confusion signals.
+- [Link](https://ieeexplore.ieee.org/document/10193048)
 
-### Project 3
-- Description
-- Links
+### [Epileptic Seizure Electroencephalography Signal Classification Using Machine Learning Algorithm](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=miPGurwAAAAJ&citation_for_view=miPGurwAAAAJ:u-x6o8ySG0sC)
+Zheng You Lim, Yong Li Neo
+2022 International Conference on Computational Science and Computational Intelligence (CSCI)
+- Utilizes machine learning to analyze electroencephalography (EEG) brain signals for binary classification of seizure brain signals.
+- [Link](https://ieeexplore.ieee.org/abstract/document/10216670)
