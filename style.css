@@ -103,7 +103,7 @@ body {
     min-width: 0; /* Prevent overflow issues */
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 15px; /* ADDED padding to push content slightly right */
+    padding-left: 200px; /* ADDED padding to push content slightly right */
 }
 
 /* Profile Picture - Size 200px */
@@ -112,7 +112,7 @@ body {
     width: 200px; /* Picture size */
     height: 200px; /* Picture size */
     object-fit: cover;
-    border-radius: 50%; /* Make the image round */
+    border-radius: 80%; /* Make the image round */
     border: 3px solid #ccc; /* Subtle border */
 }
 
