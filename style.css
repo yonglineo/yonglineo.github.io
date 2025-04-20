@@ -24,14 +24,14 @@ body {
 /* Header Styles */
 .cv-header {
     text-align: center; /* Keep text centered for name/title below layout */
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Space below the entire header block */
     padding-bottom: 20px;
     border-bottom: 1px solid #444;
 }
 
 .cv-header h1 {
     font-family: 'Montserrat', sans-serif;
-    margin: 10px 0 5px 0; /* Add margin above name */
+    margin: 10px 0 5px 0; /* Margin above name */
     color: #eeeeee;
     font-size: 2.5em;
 }
@@ -43,12 +43,12 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Refined) --- */
+/* --- LAYOUT STYLES (Further Refined) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 30px; /* Space between the left and right columns */
-    margin-bottom: 20px; /* Space below the layout block */
+    gap: 40px; /* INCREASED space between the left and right columns */
+    margin-bottom: 30px; /* INCREASED space below the layout block */
 }
 
 .left-col {
@@ -61,7 +61,6 @@ body {
 .right-col {
     flex-grow: 1; /* Allow the right column to take up remaining space */
     min-width: 0; /* Prevent overflow issues */
-    /* Add some padding to the right column to give content space */
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -79,39 +78,39 @@ body {
 /* Adjust contact and links within the right column */
 .right-col .contact,
 .right-col .links {
-    border-bottom: none; /* Remove separator within the layout block */
+    border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 15px; /* Add space between contact and links sections */
+    margin-bottom: 15px; /* Space between contact and links sections */
 }
 
 .right-col .links {
-    margin-top: 20px; /* Add a bit more space above links section */
+    margin-top: 20px; /* Space above links section */
 }
 
 
 .right-col .contact h2,
 .right-col .links h2 {
-     margin-bottom: 8px; /* Reduced space below section titles in layout */
-     padding-left: 0; /* Remove left padding for better alignment */
-     border-left: none; /* Remove the accent line for these headings in the layout */
-     text-transform: none; /* Keep text as is, not uppercase */
-     letter-spacing: normal; /* Reset letter spacing */
-     font-size: 1.3em; /* Slightly smaller heading size in layout */
-     color: #eeeeee; /* Ensure heading color is visible */
+     margin-bottom: 8px;
+     padding-left: 0;
+     border-left: none;
+     text-transform: none;
+     letter-spacing: normal;
+     font-size: 1.3em;
+     color: #eeeeee;
 }
 
 .right-col .contact p,
 .right-col .links ul {
-     margin-top: 5px; /* Add some space above the content */
-     margin-left: 0; /* Ensure left alignment */
-     padding-left: 0; /* Ensure left alignment */
-     list-style: none; /* Remove default list style */
+     margin-top: 5px;
+     margin-left: 0;
+     padding-left: 0;
+     list-style: none;
 }
 
 .right-col .links ul li {
-    display: block; /* Stack links vertically */
+    display: block;
     margin-right: 0;
-    margin-bottom: 5px; /* Space between stacked links */
+    margin-bottom: 5px;
 }
 
 .right-col .links ul li:last-child {
@@ -121,9 +120,9 @@ body {
 /* --- END LAYOUT STYLES --- */
 
 
-/* Section Styles (apply to sections *below* the header layout) */
-/* These remain largely the same but ensure they don't conflict with layout styles */
+/* Section Styles (apply to sections *below* the header block) */
 .cv-section {
+    margin-top: 25px; /* Add margin above these sections */
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px dashed #555;
@@ -135,7 +134,7 @@ body {
     padding-bottom: 0;
 }
 
-/* Re-apply specific styles for h2 outside the header-layout */
+/* Styles for h2 outside the header-layout */
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
     color: #bbbbbb;
