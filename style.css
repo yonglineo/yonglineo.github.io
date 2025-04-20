@@ -57,11 +57,11 @@ body {
 
 .left-col {
     /* Set base size slightly larger than the image to allow centering space */
-    flex: 0 0 180px; /* Adjusted base size for picture column */
+    flex: 0 0 350px; /* Adjusted base size for picture column */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-right: 15px; /* Keep padding to push image slightly left from the gap */
+    padding-right: 60px; /* Keep padding to push image slightly left from the gap */
 }
 
 .right-col {
