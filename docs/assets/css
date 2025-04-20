@@ -1,1 +1,197 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #2c3e50; /* Dark Blue/Grey */
+    --secondary-color: #3498db; /* Bright Blue for links/accents */
+    --text-color: #333; /* Dark Grey for body text */
+    --light-grey: #ecf0f1; /* Light background grey */
+    --border-color: #bdc3c7; /* Subtle border color */
+    --container-bg: #ffffff; /* White background for main content */
 
+    --body-font: 'Lato', sans-serif;
+    --heading-font: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-grey);
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Base font size */
+}
+
+.cv-container {
+    max-width: 900px; /* Adjust width as needed */
+    margin: 30px auto; /* Center the container with space top/bottom */
+    padding: 40px;
+    background-color: var(--container-bg);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* --- Header --- */
+.cv-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+}
+
+.cv-header h1 {
+    font-family: var(--heading-font);
+    font-size: 2.8em; /* Larger font size for name */
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.cv-header .job-title {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    font-weight: 400; /* Lighter than name */
+    margin: 0;
+}
+
+/* --- Sections --- */
+.cv-section {
+    margin-bottom: 35px;
+}
+
+.cv-section h2 {
+    font-family: var(--heading-font);
+    font-size: 1.6em;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Contact Section --- */
+.contact p {
+    margin: 5px 0;
+}
+
+.contact strong {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* --- Links Section --- */
+.links ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.links li {
+    margin-bottom: 8px;
+}
+
+/* --- Education Section --- */
+.education .entry {
+    margin-bottom: 20px; /* Space between education entries */
+    padding-left: 15px; /* Indent entries slightly */
+    border-left: 3px solid var(--light-grey); /* Subtle left border */
+}
+
+.education .entry:last-child {
+    margin-bottom: 0;
+}
+
+.education h3 {
+    font-family: var(--heading-font);
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.education .institution {
+    font-style: italic;
+    color: #555; /* Slightly lighter text */
+    margin: 0 0 3px 0;
+}
+
+.education .dates {
+    font-size: 0.9em;
+    color: #777; /* Even lighter text */
+    margin: 0 0 5px 0;
+}
+
+.education .details {
+    font-size: 0.95em;
+    color: #444;
+    margin: 5px 0 0 0;
+}
+
+
+/* --- Publications Section --- */
+.publications ol,
+.publications ul {
+    padding-left: 25px; /* Indentation for list */
+    margin: 0;
+}
+
+.publications li {
+    margin-bottom: 15px; /* Space between publications */
+    line-height: 1.5; /* Slightly tighter line height for citations */
+}
+
+.publications li strong { /* Make your name bold */
+    color: var(--primary-color);
+}
+
+.publications em { /* Italicize journal/conference titles */
+    font-style: italic;
+}
+
+/* --- Links --- */
+a {
+    color: var(--secondary-color);
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: #2980b9; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* --- Responsive (Optional Basic Example) --- */
+@media (max-width: 768px) {
+    .cv-container {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .cv-header h1 {
+        font-size: 2.2em;
+    }
+
+    .cv-header .job-title {
+        font-size: 1.1em;
+    }
+
+    .cv-section h2 {
+        font-size: 1.4em;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+     .cv-header h1 {
+        font-size: 1.8em;
+    }
+     body {
+        font-size: 14px;
+    }
+    .cv-container {
+        padding: 15px;
+    }
+}
