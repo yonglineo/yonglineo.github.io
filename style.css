@@ -61,7 +61,7 @@ body {
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-right: 60px; /* Keep padding to push image slightly left from the gap */
+    padding-left: 60px; /* Keep padding to push image slightly left from the gap */
 }
 
 .right-col {
