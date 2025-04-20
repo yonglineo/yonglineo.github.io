@@ -6,14 +6,10 @@ body {
     line-height: 1.6;
     background-color: #f4f7f6; /* Light background */
     color: #333; /* Dark grey text */
-    /* Removed padding-top as nav is removed */
 }
 
 /* Use Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
-
-/* --- Removed Top Navigation Bar Styles --- */
-
 
 /* Main Container */
 .cv-container {
@@ -47,22 +43,25 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Picture Column Size Adjusted) --- */
+/* --- LAYOUT STYLES (Centering the Layout Block) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
     gap: 40px; /* Space between the left and right columns */
     margin-bottom: 30px; /* Space below the layout block */
-    width: 100%; /* Ensure the flex container spans the available width */
+    /* Center the entire flex block */
+    width: 700px; /* Set a fixed width slightly less than container */
+    margin-left: auto; /* Auto margins center a block with a fixed width */
+    margin-right: auto;
 }
 
 .left-col {
-    /* Gave the column more space than the image size and center the image within it */
-    flex: 0 0 230px; /* Increased base size for picture column */
+    flex: none; /* Don't grow or shrink, size determined by content/padding */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    /* Removed padding-left */
+    /* Add padding here if needed to push image slightly right from column edge */
+    padding-right: 15px; /* Added padding to push image slightly left from the gap */
 }
 
 .right-col {
@@ -73,14 +72,14 @@ body {
     padding-left: 15px; /* Padding to push content slightly right */
 }
 
-/* Profile Picture - Size 200px */
+/* Profile Picture - Size 200px, NOT a circle */
 .profile-pic {
     display: block;
     width: 200px; /* Picture size */
     height: 200px; /* Picture size */
-    object-fit: cover;
-    border-radius: 50%; /* Make the image round */
-    border: 3px solid #ccc; /* Subtle border */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 0; /* Removed border-radius for square/rectangle */
+    border: 1px solid #ccc; /* Subtle border */
     /* No margin needed here as it's centered by parent .left-col */
 }
 
@@ -135,7 +134,6 @@ body {
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 1px dashed #eee;
-    /* Removed scroll-margin-top as nav is removed */
 }
 
 .cv-section:last-child {
