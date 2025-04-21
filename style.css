@@ -6,16 +6,54 @@ body {
     line-height: 1.6;
     background-color: #f4f7f6; /* Light background */
     color: #333; /* Dark grey text */
+    padding-top: 60px; /* Add padding to top to prevent content hiding behind fixed nav */
 }
 
 /* Use Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
+/* --- Top Navigation Bar (Assuming you added these styles) --- */
+.top-nav {
+    position: fixed; /* Fixes the navigation bar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff; /* White background for nav */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    padding: 10px 20px; /* Padding inside the nav bar */
+    z-index: 1000; /* Ensures the nav bar stays on top of other content */
+}
+
+.top-nav ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center the links */
+}
+
+.top-nav li {
+    margin: 0 15px; /* Space between navigation links */
+}
+
+.top-nav a {
+    color: #34495e; /* Darker link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    padding: 5px 0; /* Add padding for clickable area */
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #3498db; /* Blue on hover */
+}
+
+
 /* Main Container */
 .cv-container {
     max-width: 800px; /* Maximum width of the CV */
-    margin: 20px auto; /* Center the container with some top/bottom margin */
-    padding: 30px; /* Padding inside the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px 30px; /* Adjusted padding */
     background-color: #fff; /* White background for the CV content */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
     border-radius: 8px; /* Slightly rounded corners */
@@ -43,11 +81,11 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Picture Size Reverted, Column Adjusted) --- */
+/* --- LAYOUT STYLES (Picture Centering Adjusted) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 40px; /* Space between the left and right columns */
+    gap: 50px; /* INCREASED space between the left and right columns */
     margin-bottom: 30px; /* Space below the layout block */
     /* Center the entire flex block */
     width: 700px; /* Set a fixed width slightly less than container */
@@ -56,12 +94,12 @@ body {
 }
 
 .left-col {
-    /* Set base size slightly larger than the image to allow centering space */
-    flex: 0 0 180px; /* Adjusted base size for picture column */
+    flex: none; /* Don't grow or shrink */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    padding-left: 30px; /* Keep padding to push image slightly left from the gap */
+    /* Add padding on both sides to create space around the image within its column */
+    padding: 0 20px; /* ADDED internal padding to left column */
 }
 
 .right-col {
@@ -72,15 +110,14 @@ body {
     padding-left: 15px; /* Padding to push content slightly right */
 }
 
-/* Profile Picture - Size Reverted, NOT a circle */
+/* Profile Picture - Size 150px, NOT a circle */
 .profile-pic {
     display: block;
-    width: 300px; /* Reverted Picture size */
-    height: 300px; /* Reverted Picture size */
+    width: 150px; /* Picture size */
+    height: 150px; /* Picture size */
     object-fit: cover; /* Ensure image covers the area without distortion */
-    border-radius: 70%; /* Keep border-radius 0 for square/rectangle */
+    border-radius: 0; /* Keep border-radius 0 for square/rectangle */
     border: 1px solid #ccc; /* Subtle border */
-    right-padding: 10px;
     /* No margin needed here as it's centered by parent .left-col */
 }
 
@@ -154,6 +191,7 @@ body {
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    scroll-margin-top: 70px; /* Adjust this value based on nav height + desired space */
 }
 
 
@@ -229,49 +267,4 @@ a {
 a:hover {
     color: #2980b9; /* Darker blue on hover */
     text-decoration: underline; /* Underline on hover */
-}
-/* --- Top Navigation Bar --- */
-.top-nav {
-    position: fixed; /* Fixes the navigation bar at the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff; /* White background for nav */
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Subtle shadow */
-    padding: 10px 20px; /* Padding inside the nav bar */
-    z-index: 1000; /* Ensures the nav bar stays on top of other content */
-}
-
-.top-nav ul {
-    list-style: none; /* Remove default bullets */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center the links */
-}
-
-.top-nav li {
-    margin: 0 15px; /* Space between navigation links */
-}
-
-.top-nav a {
-    color: #34495e; /* Darker link color (adjust if using dark theme) */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    padding: 5px 0; /* Add padding for clickable area */
-    transition: color 0.3s ease;
-}
-
-.top-nav a:hover {
-    color: #3498db; /* Blue on hover (adjust if using dark theme) */
-}
-
-/* Add padding to top of body to prevent content hiding behind fixed nav */
-body {
-    padding-top: 60px; /* Adjust this value if your nav bar height is different */
-}
-
-/* Add scroll margin to section headings to prevent fixed nav from covering heading when linking */
-.cv-section h2 {
-    scroll-margin-top: 70px; /* Adjust this value based on nav height + desired space */
 }
