@@ -61,7 +61,7 @@ body {
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
     /* Added padding to push image slightly right from column edge */
-    padding-left: 100px;
+    padding-left: 50px;
 }
 
 .right-col {
