@@ -6,54 +6,16 @@ body {
     line-height: 1.6;
     background-color: #f4f7f6; /* Light background */
     color: #333; /* Dark grey text */
-    padding-top: 60px; /* Add padding to top to prevent content hiding behind fixed nav */
 }
 
 /* Use Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
-/* --- Top Navigation Bar (Assuming you added these styles) --- */
-.top-nav {
-    position: fixed; /* Fixes the navigation bar at the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff; /* White background for nav */
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Subtle shadow */
-    padding: 10px 20px; /* Padding inside the nav bar */
-    z-index: 1000; /* Ensures the nav bar stays on top of other content */
-}
-
-.top-nav ul {
-    list-style: none; /* Remove default bullets */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center the links */
-}
-
-.top-nav li {
-    margin: 0 15px; /* Space between navigation links */
-}
-
-.top-nav a {
-    color: #34495e; /* Darker link color (adjust if using dark theme) */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    padding: 5px 0; /* Add padding for clickable area */
-    transition: color 0.3s ease;
-}
-
-.top-nav a:hover {
-    color: #3498db; /* Blue on hover (adjust if using dark theme) */
-}
-
-
 /* Main Container */
 .cv-container {
     max-width: 800px; /* Maximum width of the CV */
-    margin: 0 auto; /* Center the container */
-    padding: 20px 30px; /* Adjusted padding */
+    margin: 20px auto; /* Center the container with some top/bottom margin */
+    padding: 30px; /* Padding inside the container */
     background-color: #fff; /* White background for the CV content */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
     border-radius: 8px; /* Slightly rounded corners */
@@ -81,11 +43,11 @@ body {
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Increased Left Column Space) --- */
+/* --- LAYOUT STYLES (Centering the Layout Block) --- */
 .header-layout {
     display: flex; /* Enable Flexbox */
     align-items: center; /* Align items to the center vertically */
-    gap: 50px; /* Space between the left and right columns */
+    gap: 40px; /* Space between the left and right columns */
     margin-bottom: 30px; /* Space below the layout block */
     /* Center the entire flex block */
     width: 700px; /* Set a fixed width slightly less than container */
@@ -94,12 +56,12 @@ body {
 }
 
 .left-col {
-    /* Set base size significantly larger than the image */
-    flex: 0 0 280px; /* Increased base size for picture column */
+    flex: none; /* Don't grow or shrink, size determined by content/padding */
     display: flex; /* Use flex to center the image within this column */
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-    /* Removed internal padding as flex-basis allocates space */
+    /* Added padding to push image slightly right from column edge */
+    padding-right: 100px;
 }
 
 .right-col {
@@ -110,13 +72,13 @@ body {
     padding-left: 15px; /* Padding to push content slightly right */
 }
 
-/* Profile Picture - Size 150px, NOT a circle */
+/* Profile Picture - Size 200px, NOT a circle */
 .profile-pic {
     display: block;
-    width: 150px; /* Picture size */
-    height: 150px; /* Picture size */
+    width: 250px; /* Picture size */
+    height: 250px; /* Picture size */
     object-fit: cover; /* Ensure image covers the area without distortion */
-    border-radius: 0; /* Keep border-radius 0 for square/rectangle */
+    border-radius: 70%; /* Removed border-radius for square/rectangle */
     border: 1px solid #ccc; /* Subtle border */
     /* No margin needed here as it's centered by parent .left-col */
 }
@@ -191,7 +153,6 @@ body {
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    scroll-margin-top: 70px; /* Adjust this value based on nav height + desired space */
 }
 
 
