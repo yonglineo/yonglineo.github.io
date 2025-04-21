@@ -230,3 +230,48 @@ a:hover {
     color: #2980b9; /* Darker blue on hover */
     text-decoration: underline; /* Underline on hover */
 }
+/* --- Top Navigation Bar --- */
+.top-nav {
+    position: fixed; /* Fixes the navigation bar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff; /* White background for nav */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    padding: 10px 20px; /* Padding inside the nav bar */
+    z-index: 1000; /* Ensures the nav bar stays on top of other content */
+}
+
+.top-nav ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center the links */
+}
+
+.top-nav li {
+    margin: 0 15px; /* Space between navigation links */
+}
+
+.top-nav a {
+    color: #34495e; /* Darker link color (adjust if using dark theme) */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    padding: 5px 0; /* Add padding for clickable area */
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #3498db; /* Blue on hover (adjust if using dark theme) */
+}
+
+/* Add padding to top of body to prevent content hiding behind fixed nav */
+body {
+    padding-top: 60px; /* Adjust this value if your nav bar height is different */
+}
+
+/* Add scroll margin to section headings to prevent fixed nav from covering heading when linking */
+.cv-section h2 {
+    scroll-margin-top: 70px; /* Adjust this value based on nav height + desired space */
+}
