@@ -2,44 +2,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
 /* Basic Reset */
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Lato', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: #1a1a1a; /* Dark page background */
     color: #e6e6e6; /* Light text */
 }
 
 /* Main Container */
 .cv-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 40px;
     background-color: #262626; /* Dark container background */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    border-radius: 12px;
 }
 
 /* Header Styles */
 .cv-header {
     text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #333; /* Dark separator */
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #333;
 }
 
 .cv-header h1 {
     font-family: 'Montserrat', sans-serif;
-    margin: 10px 0 5px 0;
-    color: #ffffff; /* White name */
-    font-size: 2.5em;
+    margin: 15px 0 8px 0;
+    color: #ffffff;
+    font-size: 2.8em;
+    letter-spacing: 0.5px;
 }
 
 .cv-header .job-title {
     margin: 0;
-    color: #aaaaaa; /* Muted grey title */
-    font-size: 1.1em;
+    color: #bbbbbb;
+    font-size: 1.2em;
     font-weight: 400;
 }
 
@@ -47,11 +52,10 @@ body {
 .header-layout {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 40px;
-    margin-bottom: 30px;
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .left-col {
@@ -63,51 +67,49 @@ body {
 
 .right-col {
     flex-grow: 1;
-    min-width: 0;
+    min-width: 250px;
     padding: 5px 0 5px 15px;
 }
 
 /* Profile Picture */
 .profile-pic {
-    display: block;
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 70%;
-    border: 2px solid #444; /* Dark subtle border */
+    border-radius: 50%;
+    border: 3px solid #444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 /* Right Column Content */
 .right-col .contact,
 .right-col .links {
-    margin-bottom: 15px;
-}
-
-.right-col .links {
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .right-col .contact h2,
 .right-col .links h2 {
-     margin-bottom: 8px;
-     font-size: 1.3em;
-     font-family: 'Montserrat', sans-serif;
-     color: #f0f0f0; /* Light headings */
+    margin-bottom: 8px;
+    font-size: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+    color: #f0f0f0;
+    border-left: 3px solid #3498db;
+    padding-left: 8px;
 }
 
 .right-col .contact p,
 .right-col .links ul {
-     margin-top: 5px;
-     margin-left: 0;
-     padding-left: 0;
-     list-style: none;
-     color: #cccccc; /* Lighter grey text */
+    margin-top: 5px;
+    padding-left: 0;
+    list-style: none;
+    color: #cccccc;
+    font-size: 0.95em;
 }
 
 /* Section Styles */
 .cv-section {
-    margin: 25px 0;
-    padding-bottom: 15px;
+    margin: 35px 0;
+    padding-bottom: 20px;
     border-bottom: 1px dashed #444;
 }
 
@@ -120,24 +122,19 @@ body {
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-    border-left: 4px solid #3498db; /* Accent */
-    padding-left: 10px;
+    margin-bottom: 18px;
+    font-size: 1.7em;
+    border-left: 4px solid #3498db;
+    padding-left: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 /* Education */
-.education .entry {
-    margin-bottom: 15px;
-}
-
 .education .entry h3 {
-    margin: 0 0 3px 0;
+    margin: 0 0 5px 0;
     color: #e0e0e0;
-    font-size: 1.2em;
+    font-size: 1.25em;
 }
 
 .education .entry .institution {
@@ -152,23 +149,24 @@ body {
     padding: 0;
     margin: 0;
     list-style: none;
-    counter-reset: publication-counter;
+    counter-reset: pub-counter;
 }
 
 .publications li {
-    margin-bottom: 20px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 32px;
     position: relative;
 }
 
 .publications li::before {
-    counter-increment: publication-counter;
-    content: counter(publication-counter) ".";
+    counter-increment: pub-counter;
+    content: counter(pub-counter) ".";
     position: absolute;
     left: 0;
     top: 0;
     font-weight: bold;
     color: #3498db;
+    font-size: 1.1em;
 }
 
 .publications li strong {
@@ -178,21 +176,51 @@ body {
 
 .publications li em {
     display: block;
-    margin: 5px 0;
+    margin: 6px 0;
     font-size: 0.9em;
     color: #aaa;
 }
 
 .publications li p {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     font-size: 0.95em;
     color: #bbb;
 }
 
+/* Awards & Leadership Lists */
+.awards ul,
+.leadership ul {
+    padding-left: 18px;
+    margin: 0;
+    color: #d0d0d0;
+}
+
+.awards li,
+.leadership li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.leadership .entry {
+    margin-bottom: 20px;
+}
+
+.leadership .entry h3 {
+    margin-bottom: 5px;
+    font-size: 1.15em;
+    color: #e0e0e0;
+}
+
+.leadership .entry .date {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 8px;
+}
+
 /* Link Styles */
 a {
-    color: #4da6ff; /* Bright accent blue */
+    color: #4da6ff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
