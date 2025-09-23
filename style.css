@@ -11,7 +11,7 @@
 .header-layout {
   display: flex;
   align-items: center; /* keeps photo and text aligned */
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .right-col {
