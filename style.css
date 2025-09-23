@@ -1,123 +1,110 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
+
 /* Basic Reset */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif; /* Example font, link in HTML */
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    background-color: #f4f7f6; /* Light background */
-    color: #333; /* Dark grey text */
+    background-color: #1a1a1a; /* Dark background */
+    color: #e6e6e6; /* Light text */
 }
-
-/* Use Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
 /* Main Container */
 .cv-container {
-    max-width: 800px; /* Maximum width of the CV */
-    margin: 20px auto; /* Center the container with some top/bottom margin */
-    padding: 30px; /* Padding inside the container */
-    background-color: #fff; /* White background for the CV content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-    border-radius: 8px; /* Slightly rounded corners */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #262626; /* Dark card background */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
 /* Header Styles */
 .cv-header {
-    text-align: center; /* Keep text centered for name/title below layout */
-    margin-bottom: 30px; /* Space below the entire header block */
+    text-align: center;
+    margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #eee; /* Separator line */
+    border-bottom: 2px solid #333; /* Dark separator */
 }
 
 .cv-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Different font for name */
-    margin: 10px 0 5px 0; /* Margin above name */
-    color: #2c3e50; /* Darker blue for name */
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0 5px 0;
+    color: #ffffff; /* White name */
     font-size: 2.5em;
 }
 
 .cv-header .job-title {
     margin: 0;
-    color: #7f8c8d; /* Grey color for title */
+    color: #b0b0b0; /* Muted grey title */
     font-size: 1.1em;
     font-weight: 400;
 }
 
-/* --- LAYOUT STYLES (Centering the Layout Block) --- */
+/* Layout Block */
 .header-layout {
-    display: flex; /* Enable Flexbox */
-    align-items: center; /* Align items to the center vertically */
-    gap: 40px; /* Space between the left and right columns */
-    margin-bottom: 30px; /* Space below the layout block */
-    /* Center the entire flex block */
-    width: 700px; /* Set a fixed width slightly less than container */
-    margin-left: auto; /* Auto margins center a block with a fixed width */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    width: 700px;
+    margin-left: auto;
     margin-right: auto;
 }
 
 .left-col {
-    flex: none; /* Don't grow or shrink, size determined by content/padding */
-    display: flex; /* Use flex to center the image within this column */
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
-    /* Added padding to push image slightly right from column edge */
-    padding-left: 0px;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right-col {
-    flex-grow: 1; /* Allow the right column to take up remaining space */
-    min-width: 0; /* Prevent overflow issues */
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px; /* Padding to push content slightly right */
+    flex-grow: 1;
+    min-width: 0;
+    padding: 5px 0 5px 15px;
 }
 
-/* Profile Picture - Size 200px, NOT a circle */
+/* Profile Picture */
 .profile-pic {
     display: block;
-    width: 250px; /* Picture size */
-    height: 250px; /* Picture size */
-    object-fit: cover; /* Ensure image covers the area without distortion */
-    border-radius: 70%; /* Removed border-radius for square/rectangle */
-    border: 1px solid #ccc; /* Subtle border */
-    /* No margin needed here as it's centered by parent .left-col */
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 70%;
+    border: 2px solid #444; /* Darker subtle border */
 }
 
-/* Adjust contact and links within the right column */
+/* Right Column Content */
 .right-col .contact,
 .right-col .links {
-    border-bottom: none; /* Remove separator within the layout block */
-    padding-bottom: 0;
-    margin-bottom: 15px; /* Space between contact and links sections */
+    margin-bottom: 15px;
 }
 
 .right-col .links {
-    margin-top: 10px; /* Add space above links section */
+    margin-top: 10px;
 }
-
 
 .right-col .contact h2,
 .right-col .links h2 {
      margin-bottom: 8px;
-     padding-left: 0; /* Ensure no extra padding */
-     border-left: none;
-     text-transform: none;
-     letter-spacing: normal;
      font-size: 1.3em;
-     color: #333; /* Dark color for headings in layout */
+     font-family: 'Montserrat', sans-serif;
+     color: #f0f0f0; /* Light heading */
 }
 
 .right-col .contact p,
 .right-col .links ul {
      margin-top: 5px;
      margin-left: 0;
-     padding-left: 0; /* Ensure no extra padding */
+     padding-left: 0;
      list-style: none;
+     color: #cccccc;
 }
 
 .right-col .links ul li {
-    display: block;
-    margin-right: 0;
     margin-bottom: 5px;
 }
 
@@ -125,15 +112,11 @@ body {
     margin-bottom: 0;
 }
 
-/* --- END LAYOUT STYLES --- */
-
-
-/* Section Styles (apply to sections *below* the header block) */
+/* Section Styles */
 .cv-section {
-    margin-top: 25px; /* Add margin above these sections */
-    margin-bottom: 25px;
+    margin: 25px 0;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed #444; /* Dark dashed separator */
 }
 
 .cv-section:last-child {
@@ -142,19 +125,17 @@ body {
     padding-bottom: 0;
 }
 
-/* Styles for h2 outside the header-layout */
 .cv-section h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #34495e; /* Slightly darker blue for section titles */
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.6em;
-    border-left: 4px solid #3498db; /* Accent line */
+    border-left: 4px solid #3498db; /* Accent */
     padding-left: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 
 /* Education */
 .education .entry {
@@ -163,17 +144,16 @@ body {
 
 .education .entry h3 {
     margin: 0 0 3px 0;
-    color: #34495e;
+    color: #e0e0e0;
     font-size: 1.2em;
 }
 
 .education .entry .institution {
     margin: 0;
-    color: #7f8c8d;
+    color: #999;
     font-size: 1em;
     font-style: italic;
 }
-
 
 /* Publications */
 .publications ol {
@@ -196,36 +176,36 @@ body {
     left: 0;
     top: 0;
     font-weight: bold;
-    color: #3498db; /* Match accent color */
+    color: #3498db;
 }
 
 .publications li strong {
     font-size: 1.1em;
-    color: #333; /* Dark text */
+    color: #ffffff;
 }
 
 .publications li em {
     display: block;
     margin: 5px 0;
     font-size: 0.9em;
-    color: #555;
+    color: #aaa;
 }
 
 .publications li p {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 0.95em;
-    color: #555;
+    color: #bbb;
 }
 
 /* Link Styles */
 a {
-    color: #3498db; /* Blue link color */
-    text-decoration: none; /* No underline by default */
+    color: #4da6ff; /* Bright accent blue */
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #2980b9; /* Darker blue on hover */
-    text-decoration: underline; /* Underline on hover */
+    color: #1e90ff; /* Deeper blue */
+    text-decoration: underline;
 }
