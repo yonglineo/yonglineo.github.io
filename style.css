@@ -14,12 +14,6 @@
   gap: 2rem;
 }
 
-.left-col img.profile-pic {
-  width: 150px;
-  border-radius: 100%;
-  object-fit: cover;
-}
-
 .right-col {
   display: flex;
   flex-direction: column;
@@ -111,18 +105,17 @@ body {
 
 .right-col {
     flex-grow: 1;
-    min-width: 250px;
+    min-width: 200px;
     padding: 5px 0 5px 15px;
 }
 
-/* Profile Picture */
-.profile-pic {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #444;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+.left-col .profile-pic {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 /* Right Column Content */
