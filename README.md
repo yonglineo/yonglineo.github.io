@@ -1,10 +1,10 @@
 # Yong Li (Neo) Neo
 
-High School Senior, studying A-levels @ Kolej Tuanku Ja'afar (Mantin, Negeri Sembilan, Malaysia)
+CS major @ Georgia Tech
 
 ---
 
-**Contact:** 25neoyongli@ktj.edu.my
+**Contact:** yonglineo@gatech.edu
 
 **Links:**
 * [Google Scholar Profile](https://scholar.google.com/citations?user=miPGurwAAAAJ&hl=en)
