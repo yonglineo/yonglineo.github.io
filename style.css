@@ -7,22 +7,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .header-layout {
   display: flex;
-  align-items: flex-start; /* aligns name with top of photo */
+  align-items: center; /* keeps photo and text aligned */
   gap: 2rem;
 }
 
-.intro h1 {
+.left-col img.profile-pic {
+  width: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .job-title {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
   font-size: 1.1rem;
-  color: #aaa;
+  color: #555;
+}
+
+.contact-links {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.contact-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
 }
 
 body {
