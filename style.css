@@ -85,7 +85,9 @@ body {
     font-size: 1.2em;
     font-weight: 400;
 }
-
+.cv-section p {
+    margin-bottom: 1.5em; /* Adjust spacing between paragraphs */
+}
 /* Layout Block */
 .header-layout {
     display: flex;
