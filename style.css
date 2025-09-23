@@ -7,6 +7,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+.header-layout {
+  display: flex;
+  align-items: flex-start; /* aligns name with top of photo */
+  gap: 2rem;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.job-title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #aaa;
+}
 
 body {
     font-family: 'Lato', sans-serif;
