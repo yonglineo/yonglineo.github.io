@@ -7,7 +7,7 @@ body {
     padding: 0;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    background-color: #1a1a1a; /* Dark background */
+    background-color: #1a1a1a; /* Dark page background */
     color: #e6e6e6; /* Light text */
 }
 
@@ -16,9 +16,9 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 30px;
-    background-color: #262626; /* Dark card background */
+    background-color: #262626; /* Dark container background */
     box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 /* Header Styles */
@@ -38,7 +38,7 @@ body {
 
 .cv-header .job-title {
     margin: 0;
-    color: #b0b0b0; /* Muted grey title */
+    color: #aaaaaa; /* Muted grey title */
     font-size: 1.1em;
     font-weight: 400;
 }
@@ -74,7 +74,7 @@ body {
     height: 250px;
     object-fit: cover;
     border-radius: 70%;
-    border: 2px solid #444; /* Darker subtle border */
+    border: 2px solid #444; /* Dark subtle border */
 }
 
 /* Right Column Content */
@@ -92,7 +92,7 @@ body {
      margin-bottom: 8px;
      font-size: 1.3em;
      font-family: 'Montserrat', sans-serif;
-     color: #f0f0f0; /* Light heading */
+     color: #f0f0f0; /* Light headings */
 }
 
 .right-col .contact p,
@@ -101,22 +101,14 @@ body {
      margin-left: 0;
      padding-left: 0;
      list-style: none;
-     color: #cccccc;
-}
-
-.right-col .links ul li {
-    margin-bottom: 5px;
-}
-
-.right-col .links ul li:last-child {
-    margin-bottom: 0;
+     color: #cccccc; /* Lighter grey text */
 }
 
 /* Section Styles */
 .cv-section {
     margin: 25px 0;
     padding-bottom: 15px;
-    border-bottom: 1px dashed #444; /* Dark dashed separator */
+    border-bottom: 1px dashed #444;
 }
 
 .cv-section:last-child {
@@ -206,6 +198,6 @@ a {
 }
 
 a:hover {
-    color: #1e90ff; /* Deeper blue */
+    color: #1e90ff;
     text-decoration: underline;
 }
