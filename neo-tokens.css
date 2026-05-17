@@ -1,0 +1,308 @@
+/* ============================================================
+   NEO — Colors & Typography
+   A Swiss/minimalist system for research presentations.
+   Influenced by Nature, Cell, ICML, ISMB editorial standards.
+   ============================================================ */
+
+/* ---------- Fonts ----------
+   Apple system stack: SF Pro Display / Text for sans, New York for serif,
+   SF Mono for mono. These ship with macOS / iOS / iPadOS at every weight
+   and load instantly with no network round-trip.
+   On non-Apple systems we fall through to Helvetica Neue, Charter, and
+   ui-monospace — the closest available analogues.
+*/
+
+/* No webfont import — Apple system fonts are loaded by the OS.
+   On non-Apple systems the stack falls back to Helvetica Neue / system-ui. */
+
+:root {
+  /* ---------- Type families ---------- */
+  /* Apple system stack — SF Pro everywhere it's available, with sensible fallbacks. */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  --font-serif: 'New York', 'Charter', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, Monaco, 'JetBrains Mono', monospace;
+
+  /* ---------- Type scale (16px base, Major Third 1.250) ---------- */
+  --text-3xs:   10px;  /* metadata, labels */
+  --text-2xs:   11px;  /* footnotes, axis labels */
+  --text-xs:    12px;  /* captions, citations */
+  --text-sm:    13px;  /* secondary body */
+  --text-base:  15px;  /* body */
+  --text-md:    17px;  /* lead paragraph */
+  --text-lg:    20px;  /* small heading */
+  --text-xl:    26px;  /* heading */
+  --text-2xl:   34px;  /* section title */
+  --text-3xl:   46px;  /* slide title */
+  --text-4xl:   62px;  /* display */
+  --text-5xl:   84px;  /* hero */
+  --text-6xl:  112px;  /* monumental */
+
+  /* ---------- Line heights ---------- */
+  --leading-tight:   1.08;  /* display */
+  --leading-snug:    1.18;  /* headings */
+  --leading-normal:  1.45;  /* body */
+  --leading-relaxed: 1.62;  /* long-form serif */
+
+  /* ---------- Letter spacing ---------- */
+  --tracking-tighter: -0.03em;  /* large display */
+  --tracking-tight:   -0.015em; /* headings */
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;   /* small caps, labels */
+  --tracking-wider:   0.12em;   /* eyebrow labels */
+
+  /* ---------- Weights ---------- */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ============================================================
+     COLORS
+     A neutral-forward palette: paper white, deep ink, a single
+     research-blue accent, and one warm signal. Restrained.
+     ============================================================ */
+
+  /* ---------- Neutral scale (warm-leaning, not pure gray) ---------- */
+  --neutral-0:    #FFFFFF;  /* pure white (rare) */
+  --neutral-50:   #FAFAF7;  /* paper — primary canvas */
+  --neutral-100:  #F4F3EE;  /* paper-tinted */
+  --neutral-150:  #ECEAE3;  /* quiet surface */
+  --neutral-200:  #DDDBD2;  /* hairline / divider */
+  --neutral-300:  #C4C2B8;  /* muted */
+  --neutral-400:  #9B9990;  /* tertiary text */
+  --neutral-500:  #6F6E66;  /* secondary text */
+  --neutral-600:  #4A4944;  /* body */
+  --neutral-700:  #2E2E2A;  /* heading */
+  --neutral-800:  #1A1A18;  /* deep ink */
+  --neutral-900:  #0D0D0C;  /* near-black */
+
+  /* ---------- Accents (used sparingly) ---------- */
+  --accent-ink:      #0D0D0C;  /* primary ink */
+  --accent-blue:     #1B3A8A;  /* research blue (Nature-ish) */
+  --accent-blue-fg:  #FFFFFF;
+  --accent-blue-50:  #EEF2FB;
+  --accent-blue-100: #D6DEEF;
+
+  --accent-rust:     #B14A2C;  /* signal / warm callout */
+  --accent-rust-50:  #FAEDE7;
+
+  --accent-moss:     #4A6E3A;  /* positive / data */
+  --accent-moss-50:  #ECF1E5;
+
+  --accent-ochre:    #B98C2A;  /* highlight / annotation */
+  --accent-ochre-50: #F9F1DC;
+
+  /* ---------- Semantic foreground ---------- */
+  --fg-1: var(--neutral-900);   /* primary */
+  --fg-2: var(--neutral-700);   /* heading */
+  --fg-3: var(--neutral-600);   /* body */
+  --fg-4: var(--neutral-500);   /* secondary */
+  --fg-5: var(--neutral-400);   /* tertiary / metadata */
+  --fg-disabled: var(--neutral-300);
+  --fg-on-dark: var(--neutral-50);
+
+  /* ---------- Semantic background ---------- */
+  --bg-canvas:    var(--neutral-50);    /* page */
+  --bg-surface:   var(--neutral-0);     /* elevated card */
+  --bg-quiet:     var(--neutral-100);   /* recessed area */
+  --bg-muted:     var(--neutral-150);   /* sidebar / panel */
+  --bg-inverse:   var(--neutral-900);   /* dark mode block */
+  --bg-on-dark:   var(--neutral-50);
+
+  /* ---------- Borders ---------- */
+  --border-hairline: var(--neutral-200);   /* default 1px rules */
+  --border-default:  var(--neutral-300);
+  --border-strong:   var(--neutral-700);
+  --border-ink:      var(--neutral-900);   /* editorial heavy rule */
+
+  /* ============================================================
+     SPACING — 4px base grid
+     ============================================================ */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Radii ---------- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-pill: 999px;
+  /* Neo is editorial — most surfaces use 0 or 2px. */
+
+  /* ---------- Shadows — minimal, used rarely ---------- */
+  --shadow-none: none;
+  --shadow-hairline: 0 0 0 1px var(--neutral-200);
+  --shadow-xs: 0 1px 2px rgba(13,13,12,0.04);
+  --shadow-sm: 0 1px 3px rgba(13,13,12,0.06), 0 1px 2px rgba(13,13,12,0.04);
+  --shadow-md: 0 4px 12px rgba(13,13,12,0.06), 0 1px 3px rgba(13,13,12,0.04);
+  --shadow-lg: 0 12px 32px rgba(13,13,12,0.08), 0 2px 6px rgba(13,13,12,0.04);
+
+  /* ---------- Layout ---------- */
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --max-content: 1280px;
+  --max-prose:   680px;
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0.13, 1);
+  --ease-emphasis: cubic-bezier(0.32, 0.04, 0.06, 1);
+  --duration-fast:   120ms;
+  --duration-normal: 200ms;
+  --duration-slow:   320ms;
+
+  /* ============================================================
+     SEMANTIC TYPE TOKENS
+     ============================================================ */
+  --display-font: var(--font-sans);
+  --display-weight: var(--weight-light);
+  --display-tracking: var(--tracking-tighter);
+  --display-leading: var(--leading-tight);
+
+  --heading-font: var(--font-sans);
+  --heading-weight: var(--weight-medium);
+  --heading-tracking: var(--tracking-tight);
+  --heading-leading: var(--leading-snug);
+
+  --body-font: var(--font-serif);
+  --body-weight: var(--weight-regular);
+  --body-leading: var(--leading-relaxed);
+
+  --ui-font: var(--font-sans);
+  --ui-weight: var(--weight-medium);
+
+  --eyebrow-font: var(--font-mono);
+  --eyebrow-weight: var(--weight-medium);
+  --eyebrow-tracking: var(--tracking-wider);
+  --eyebrow-transform: uppercase;
+}
+
+/* ============================================================
+   ELEMENT DEFAULTS
+   ============================================================ */
+html, body {
+  background: var(--bg-canvas);
+  color: var(--fg-1);
+  font-family: var(--ui-font);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--display-font);
+  font-weight: var(--display-weight);
+  font-size: var(--text-4xl);
+  line-height: var(--display-leading);
+  letter-spacing: var(--display-tracking);
+  color: var(--fg-1);
+  margin: 0 0 var(--space-6);
+}
+
+h2, .h2 {
+  font-family: var(--heading-font);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-2xl);
+  line-height: var(--heading-leading);
+  letter-spacing: var(--heading-tracking);
+  color: var(--fg-2);
+  margin: 0 0 var(--space-4);
+}
+
+h3, .h3 {
+  font-family: var(--heading-font);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--heading-leading);
+  letter-spacing: var(--heading-tracking);
+  color: var(--fg-2);
+  margin: 0 0 var(--space-3);
+}
+
+h4, .h4 {
+  font-family: var(--heading-font);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-lg);
+  line-height: var(--heading-leading);
+  color: var(--fg-2);
+  margin: 0 0 var(--space-2);
+}
+
+p, .body {
+  font-family: var(--body-font);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-3);
+  margin: 0 0 var(--space-4);
+  text-wrap: pretty;
+}
+
+.lede {
+  font-family: var(--body-font);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-2);
+  font-style: italic;
+}
+
+small, .caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--fg-4);
+}
+
+code, kbd, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.eyebrow {
+  font-family: var(--eyebrow-font);
+  font-weight: var(--eyebrow-weight);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--eyebrow-tracking);
+  text-transform: var(--eyebrow-transform);
+  color: var(--fg-4);
+}
+
+.figure-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-4);
+  text-transform: uppercase;
+}
+
+.citation {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--fg-4);
+  letter-spacing: 0.02em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-hairline);
+  margin: var(--space-8) 0;
+}
+
+hr.rule-strong {
+  border-top: 1px solid var(--border-ink);
+}
