@@ -70,7 +70,8 @@ function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const region = useRegionSeason();
   const seasonAuto = region.season;
-  const season = seasonAuto;
+  const [seasonPick, setSeasonPick] = React.useState(null);
+  const season = seasonPick || seasonAuto;
   const [route, setRoute] = React.useState(readRoute);
   const { page, sub } = route;
   const setPage = React.useCallback((p) => setRoute({ page: p, sub: null }), []);
@@ -138,7 +139,8 @@ function App() {
       <ScrollProgress />
       <SeasonFX season={season} enabled={true} trail={true} intensity={["projects", "cv", "research"].includes(page) ? 0.7 : 1} />
       <SeasonCursor season={season} enabled={true} />
-      <Nav page={page} setPage={setPage} alias={data.name.alias} season={season} place={region.place} />
+      <SeasonDock season={season} auto={seasonAuto} setSeason={setSeasonPick} />
+      <Nav page={page} setPage={setPage} alias={data.name.alias} season={season} place={season === seasonAuto ? region.place : ""} />
       <main className="site-main">{pageEl}</main>
       <Footer data={data} setPage={setPage} />
 

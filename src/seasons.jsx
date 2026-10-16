@@ -297,6 +297,41 @@ function SeasonFX({ season, enabled, trail = true, intensity = 1 }) {
   return <canvas ref={ref} className="season-canvas" aria-hidden="true" style={{ display: enabled ? "block" : "none" }} />;
 }
 
+// Small control, bottom-right. Closed it shows the current season; open it
+// lists the four so a visitor can override the location-based one.
+function SeasonDock({ season, auto, setSeason }) {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!open) return;
+    const onDown = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+  const pick = (s) => { setSeason(s === auto ? null : s); setOpen(false); };
+  return (
+    <div className={"season-dock" + (open ? " open" : "")} ref={ref}>
+      {open && (
+        <div className="season-dock-menu" role="menu" aria-label="Season">
+          {SEASON_ORDER.map((s) => (
+            <button key={s} type="button" role="menuitemradio" aria-checked={s === season} className={"season-dock-opt" + (s === season ? " on" : "")} style={{ "--chip": SEASONS[s].accent }} onClick={() => pick(s)}>
+              <i /><span>{s}</span>{s === auto ? <span className="now">here</span> : null}
+            </button>
+          ))}
+        </div>
+      )}
+      <button type="button" className="season-dock-btn" aria-expanded={open} aria-label={"Season, " + season + ". Change season"} onClick={() => setOpen((v) => !v)}>
+        <i />{season}
+      </button>
+    </div>
+  );
+}
+
 // ─── visitor-facing season switcher ───────────────────────────
 function SeasonSwitch({ season, auto, setSeason, effects, setEffects }) {
   return (
@@ -311,4 +346,4 @@ function SeasonSwitch({ season, auto, setSeason, effects, setEffects }) {
   );
 }
 
-Object.assign(window, { SEASONS, SEASON_ORDER, detectSeason, useRegionSeason, SeasonFX, SeasonCursor, SeasonSwitch });
+Object.assign(window, { SEASONS, SEASON_ORDER, detectSeason, useRegionSeason, SeasonFX, SeasonCursor, SeasonSwitch, SeasonDock });

@@ -1,7 +1,7 @@
 // pages.jsx — page-level components
 
 // ─── HOME ─────────────────────────────────────────────────────
-function HomePage({ data, setPage, season, region = {} }) {
+function HomePage({ data, setPage, season, seasonAuto, region = {} }) {
   const S = SEASONS[season];
   const year = new Date().getFullYear();
   const latest = data.posts.slice().sort((x, y) => new Date("1 " + y.date) - new Date("1 " + x.date)).slice(0, 3);
@@ -24,7 +24,10 @@ function HomePage({ data, setPage, season, region = {} }) {
             <a href={data.links.cv} download="Yong_Li_Neo_CV.pdf">cv ↓</a>
           </div>
           <p className="c-season">
-            It's {S.label} where you are{region.place ? ` (${region.place})` : ""}{region.tropical ? " — which, near the equator, is basically always" : ""}, {S.line}. Wiggle your cursor or click around.
+            {season === seasonAuto
+              ? <>It's {S.label} where you are{region.place ? ` (${region.place})` : ""}{region.tropical ? " — which, near the equator, is basically always" : ""}, {S.line}.</>
+              : <>It's {S.label} in here, {S.line}.</>}
+            {" "}Wiggle your cursor or click around.
           </p>
         </Reveal>
         <Reveal kind="rise" delay={120} className="c-photo-wrap">
