@@ -13,7 +13,7 @@ function HomePage({ data, setPage, season, region = {} }) {
         <Reveal kind="rise" className="c-hero-text">
           <div className="c-kicker"><span className="c-dot" />Atlanta, GA · {year}</div>
           <h1 className="c-title">hey, I'm <em>Neo</em>.</h1>
-          <p className="c-lede">I'm a CS major at Georgia Tech. I'm interested in geometric deep learning &amp; computational biology research, primarily focusing on algorithmic advancements. I'm currently in the Zhang Lab, under the supervision of Prof. Xiuwei Zhang.</p>
+          <p className="c-lede">I'm a CS major at Georgia Tech. I'm interested in geometric deep learning &amp; computational biology research, primarily focusing on algorithmic advancements. I'm currently in the Zhang Lab, under the supervision of <a className="person-link" href="https://xiuweizhang.wordpress.com/" target="_blank" rel="noopener">Prof. Xiuwei Zhang</a>.</p>
           <p className="c-lede" style={{ marginTop: 14 }}>Outside of research, I love taking photos and cooking food.</p>
           <div className="c-links">
             <a href={"mailto:" + data.links.email}>email</a>
@@ -68,7 +68,7 @@ function ResearchPage({ data }) {
         <Reveal kind="rise">
           <Eyebrow>research</Eyebrow>
           <h1 className="r-title">Research</h1>
-          <p className="c-lede">I'm currently in the Zhang Lab at Georgia Tech, under the supervision of Prof. Xiuwei Zhang, where my work spans cell–cell communication, spatial domains, and lineage reconstruction. Before that, I spent three years on machine learning/deep learning for EEG signal classification.</p>
+          <p className="c-lede">I'm currently in the Zhang Lab at Georgia Tech, under the supervision of <a className="person-link" href="https://xiuweizhang.wordpress.com/" target="_blank" rel="noopener">Prof. Xiuwei Zhang</a>, where my work spans cell–cell communication, spatial domains, and lineage reconstruction. Before that, I spent three years on machine learning/deep learning for EEG signal classification.</p>
         </Reveal>
       </section>
       <section className="page c-block" style={{ paddingTop: 0 }}>
@@ -112,7 +112,7 @@ function CVPage({ data }) {
           {journey.map((j, i) => (
             <div key={i} className="c-row r-pub r-static">
               <span className="k">{j.when}</span>
-              <span className="v"><span className="t">{j.role}</span><span className="m">{j.org}{j.group ? " · " + j.group : ""}</span><span className="d">{j.body}</span></span>
+              <span className="v"><span className="t">{j.role}</span><span className="m">{j.org}{j.group ? <> · {linkProfZhang(j.group)}</> : null}</span><span className="d">{j.body}</span></span>
               <span className="ar">{j.live ? <i className="r-live" /> : null}</span>
             </div>
           ))}
@@ -309,4 +309,17 @@ function BlogPage({ data }) {
   );
 }
 
-Object.assign(window, { HomePage, ResearchPage, CVPage, BlogPage });
+// Turns the professor's name into a link when it appears inside a plain string.
+function linkProfZhang(text) {
+  const name = "Prof. Xiuwei Zhang";
+  if (typeof text !== "string" || !text.includes(name)) return text;
+  const parts = text.split(name);
+  const out = [];
+  parts.forEach((part, i) => {
+    if (i > 0) out.push(<a key={i} className="person-link" href="https://xiuweizhang.wordpress.com/" target="_blank" rel="noopener">{name}</a>);
+    if (part) out.push(part);
+  });
+  return out;
+}
+
+Object.assign(window, { HomePage, ResearchPage, CVPage, BlogPage, linkProfZhang });

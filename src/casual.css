@@ -121,8 +121,8 @@ p.c-season{margin:40px 0 0;font-family:var(--font-serif);font-style:italic;font-
 .r-live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--season);box-shadow:0 0 0 4px color-mix(in oklch,var(--season) 22%,transparent)}
 .r-meta{color:var(--ink-soft)}
 .r-meta span{border-bottom:0}
-.c-lede a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.c-lede a:hover{color:var(--season)}
+.c-lede a, a.person-link{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.c-lede a:hover, a.person-link:hover{color:var(--season)}
 .page-view > section.page{padding-left:var(--page-pad-x)!important;padding-right:var(--page-pad-x)!important}
 .tv-cn{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft)}
 .tv-side{margin:18px 0 22px!important;max-width:680px;font-size:17px!important}

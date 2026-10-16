@@ -52,7 +52,7 @@ function ProjectsPage({ data, slug, setSlug }) {
           {(data.projects || []).map((r, i) => (
             <div key={i} className="c-row r-pub r-static">
               <span className="k">{r.date}</span>
-              <span className="v"><span className="t">{r.title}</span><span className="d">{r.sub}</span><span className="m">{[r.status, r.stack].filter(Boolean).join(" · ")}</span></span>
+              <span className="v"><span className="t">{r.title}</span><span className="d">{linkProfZhang(r.sub)}</span><span className="m">{[r.status, r.stack].filter(Boolean).join(" · ")}</span></span>
               <span className="ar">{r.status === "In progress" ? <i className="r-live" /> : null}</span>
             </div>
           ))}
