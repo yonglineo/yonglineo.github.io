@@ -265,7 +265,14 @@ function BlogPage({ data }) {
             <div className="post-with-toc">
               <aside className="post-toc">
                 <div className="post-toc-label">Contents</div>
-                <nav>{window[post.toc].map((item) => <a key={item.id} href={"#" + item.id}>{item.label}</a>)}</nav>
+                <nav>{window[post.toc].map((item) => (
+                  <a key={item.id} href={"#" + item.id} onClick={(e) => {
+                    // Hash routing owns location.hash; a bare #section id is read as a page
+                    // and falls through to home. Scroll in place and leave the route alone.
+                    e.preventDefault();
+                    document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}>{item.label}</a>
+                ))}</nav>
               </aside>
               <div className="post-toc-body">{Body ? <Body /> : <p>Content coming soon.</p>}</div>
             </div>
